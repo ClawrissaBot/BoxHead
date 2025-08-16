@@ -1,0 +1,42 @@
+{
+  "name": "boxhead-zombie-survival",
+  "version": "1.0.0",
+  "description": "2D top-down local multiplayer zombie survival game",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": ["game", "zombie", "survival", "multiplayer", "2d"],
+  "author": "BoxHead Game Developer",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.boxhead.zombiesurvival",
+    "productName": "BoxHead Zombie Survival",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "js/**/*",
+      "electron-main.js"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "icon.png"
+    }
+  }
+}
